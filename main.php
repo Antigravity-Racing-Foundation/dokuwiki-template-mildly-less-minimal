@@ -145,6 +145,8 @@ $page_title = p_get_metadata($ID)['title'] ?: "No title";
 
                             if($USERINFO){
                                 $TOOLSUNAME = " (".$USERINFO['name'].")";
+                            } else {
+                                $TOOLSUNAME = "";
                             }
 
                             echo '<div class="list"><p class="mobile-menu-title">'.tpl_getLang('user').' '.tpl_getLang('tools').$TOOLSUNAME.'</p>'.
