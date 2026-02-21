@@ -17,7 +17,12 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT=='show');
 ob_start();
 tpl_pagetitle();
 $title = ob_get_clean();
-$page_title = p_get_metadata($ID)['title'] ?: "No title";
+
+$page_title = "No title";
+$page_meta = p_get_metadata($ID);
+if(isset($page_meta['title'])) {
+    $page_title = $page_meta['title'];
+};
 ?>
 
 <!DOCTYPE html>
